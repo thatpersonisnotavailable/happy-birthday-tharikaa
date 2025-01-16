@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Tharika!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    h1, h2 {
+      color: #800080;
+    }
+    h1 {
+      margin-top: 20px;
+      font-size: 3rem;
+    }
+    section {
+      padding: 50px 20px;
+    }
+    #gifts, #gallery {
+      background: #f9f9f9;
+    }
+    #message {
+      background: #800080;
+      color: white;
+    }
+    #countdown {
+      background: #4b0082;
+      color: white;
+    }
+    img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+    .confetti {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      animation: float 5s infinite linear;
+    }
+    @keyframes float {
+      0% {transform: translateY(-100%);}
+      100% {transform: translateY(100%);}
+    }
+  </style>
+</head>
+<body>
+  <!-- Home Page -->
+  <h1>Happy Birthday, My Dear Tharika!</h1>
+  <img src="https://example.com/confetti.gif" class="confetti" alt="Confetti Animation">
+
+  <!-- Gift Section -->
+  <section id="gifts">
+    <h2>Gifts for You</h2>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+      <div>
+        <img src="https://example.com/gift1.jpg" alt="Gift 1">
+        <p>A beautiful necklace to match your elegance. I chose it because it reminded me of your style.</p>
+      </div>
+      <div>
+        <img src="https://example.com/gift2.jpg" alt="Gift 2">
+        <p>Your favorite book to add to your collection, a small token of our shared love for reading!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Message Section -->
+  <section id="message">
+    <h2>My Message to You</h2>
+    <p>
+      Dear Tharika,<br><br>
+      You are one of the most amazing people I’ve ever met. Your kindness, laughter, and strength inspire me every day. I’m so grateful to have you in my life. May your birthday be as wonderful and special as you are! 💜<br><br>
+      With all my love,<br>
+      [Your Name]
+    </p>
+    <audio controls>
+      <source src="https://example.com/audio-message.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <h2>Memories Together</h2>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+      <div>
+        <img src="https://example.com/photo1.jpg" alt="Memory 1">
+        <p>That unforgettable trip to the mountains.</p>
+      </div>
+      <div>
+        <img src="https://example.com/photo2.jpg" alt="Memory 2">
+        <p>Your first birthday we celebrated together!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Countdown Section -->
+  <section id="countdown">
+    <h2>Countdown to Your Next Birthday!</h2>
+    <p id="timer"></p>
+    <script>
+      const nextBirthday = new Date('January 15, 2026 00:00:00').getTime();
+      const timerElement = document.getElementById('timer');
+
+      setInterval(() => {
+        const now = new Date().getTime();
+        const distance = nextBirthday - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+        if (distance < 0) {
+          clearInterval(timer);
+          timerElement.innerHTML = "Happy Birthday, Tharika!";
+        }
+      }, 1000);
+    </script>
+  </section>
+</body>
+</html>
